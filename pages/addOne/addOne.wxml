@@ -7,7 +7,7 @@
         <van-field name="commodityRemark" value="{{commodityRemark}}" label="商品备注" type="textarea" placeholder="请输入商品备注信息" autosize />
         <view class="uploadplace" >
         <view class="imgfont">商品图片</view>
-            <van-uploader file-list="{{fileList}}" max-count="2" bind:after-read="afterRead" bind:delete="deleteimg" />
+            <van-uploader file-list="{{fileList}}" max-count="1" bind:after-read="afterRead" bind:delete="deleteimg" />
         </view>
             
         <button formType="submit">提交</button>
