@@ -1,0 +1,11 @@
+/* pages/addOne/addOne.wxss */
+.imgfont{
+    color: var(--field-label-color,#59595a);
+    font-size: 14px;
+    padding: 17px;
+    margin-right:23px ;
+}
+.uploadplace{
+    display: flex;
+    align-items:center;
+}

@@ -1,2 +1,12 @@
-<!--pages/admin/admin.wxml-->
-<text>pages/admin/admin.wxml</text>
+<view class="title">商品添加</view>
+<van-divider />
+<van-grid>
+  <van-grid-item icon="notes-o" text="添加单个" url="/pages/addOne/addOne" />
+  <van-grid-item icon="cart-o" text="添加套餐" />
+</van-grid>
+<view class="title">商品修改</view>
+<van-divider />
+<van-grid>
+  <van-grid-item icon="notes-o" text="修改单个" />
+  <van-grid-item icon="cart-o" text="修改套餐" />
+</van-grid>

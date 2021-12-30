@@ -1,0 +1,15 @@
+<form bindsubmit="setCommodity">
+    <van-cell-group>
+        <van-field name="commodityId" value="{{commodityId}}" bind:blur="commodityIdCheckNull" required clearable label="商品码" icon="scan" placeholder="扫一扫识别商品码或手动输入" bind:click-icon="onClickscanIcon" />
+
+        <van-field name="commodityName" value="{{commodityName}}" bind:blur="commodityNameCheckNull" label="商品名称" placeholder="请输入商品名称" required />
+        <van-field name="commodityMoney" value="{{commodityMoney}}" bind:blur="commodityMoneyCheckNull" label="商品金额" placeholder="请输入商品名称" required />
+        <van-field name="commodityRemark" value="{{commodityRemark}}" label="商品备注" type="textarea" placeholder="请输入商品备注信息" autosize />
+        <view class="uploadplace" >
+        <view class="imgfont">商品图片</view>
+            <van-uploader file-list="{{fileList}}" max-count="2" bind:after-read="afterRead" bind:delete="deleteimg" />
+        </view>
+            
+        <button formType="submit">提交</button>
+    </van-cell-group>
+</form>

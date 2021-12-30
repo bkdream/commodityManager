@@ -1,1 +1,6 @@
-/* pages/admin/admin.wxss */
+.title{
+    margin-top: 5px;
+    margin-left: 5px;
+    font-weight: 500;
+    font-size: x-large;
+}
