@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/admin/admin",
     "pages/logs/logs"
   ],
   "window": {
@@ -9,8 +10,18 @@
     "navigationBarTitleText": "Weixin",
     "navigationBarTextStyle": "black"
   },
+  "tabBar": {
+    "custom": true,
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "查询订单"
+  },
+  {
+      "pagePath": "pages/admin/admin",
+      "text": "管理订单"
+  }]
+  },
   "sitemapLocation": "sitemap.json",
-  "lazyCodeLoading": "requiredComponents",
   "usingComponents": {
 
   }

@@ -4,7 +4,7 @@ Page({
     },
     onShow(e){
         this.getTabBar().setData({
-          active:0,
+          active:1,
         })
       },
 })
