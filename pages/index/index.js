@@ -1,3 +1,4 @@
+const db = wx.cloud.database().collection("shopmessage");
 Page({
     data:{
 
@@ -7,4 +8,13 @@ Page({
           active:0,
         })
       },
+      onClickscanIcon(e){
+        var _this = this;
+        wx.scanCode({
+          onlyFromCamera: true,
+          success(res){
+              
+          }
+        })
+    }
 })

@@ -1,13 +1,13 @@
 {
   "pages": [
-    "pages/addOne/addOne",
     "pages/index/index",
+    "pages/addOne/addOne",
     "pages/admin/admin",
     "pages/logs/logs"
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
+    "navigationBarBackgroundColor": "#6ab5fc",
     "navigationBarTitleText": "Weixin",
     "navigationBarTextStyle": "black"
   },
@@ -24,6 +24,6 @@
   },
   "sitemapLocation": "sitemap.json",
   "usingComponents": {
-
+    
   }
 }

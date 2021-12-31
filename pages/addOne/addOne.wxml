@@ -8,8 +8,7 @@
         <view class="uploadplace" >
         <view class="imgfont">商品图片</view>
             <van-uploader file-list="{{fileList}}" max-count="1" bind:after-read="afterRead" bind:delete="deleteimg" />
-        </view>
-            
+        </view>     
         <button formType="submit">提交</button>
     </van-cell-group>
 </form>
