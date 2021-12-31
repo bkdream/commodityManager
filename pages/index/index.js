@@ -13,7 +13,15 @@ Page({
         wx.scanCode({
           onlyFromCamera: true,
           success(res){
-              
+              db.where({
+                commodityId:res.result,
+              }).get({
+                success(res){
+                  _this.setData({
+                    commodityMessage:res.data,
+                  })
+                }
+              })
           }
         })
     }

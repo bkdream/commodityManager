@@ -5,6 +5,7 @@
 </van-search>
 <van-empty wx:if="{{commodityMessage == null ||commodityMessage == []}}" image="search" description="请通过扫一扫或搜索查询商品信息" />
 <block wx:for="{{commodityMessage}}" wx:key="item">
-    <van-card data-commodityId="{{item.commodityId}}" price="{{item.commodityMoney}}" desc="{{item.commodityRemark}}" title="{{commodityName}}" thumb="{{commodityImg}}">
+    <van-card data-commodityId="{{item.commodityId}}" price="{{item.commodityMoney}}" desc="{{item.commodityRemark}}" title="{{item.commodityName}}" thumb="{{item.commodityImg}}">
+    <van-button>修改</van-button>
     </van-card>
 </block>
