@@ -3,9 +3,12 @@
         <van-icon name="scan" size="32px" custom-style="margin-top:7px;" />
     </view>
 </van-search>
-<van-empty wx:if="{{commodityMessage == null ||commodityMessage == []}}" image="search" description="请通过扫一扫或搜索查询商品信息" />
+<van-empty wx:if="{{commodityMessage.length == 0 || commodityMessage == null}}" image="search" description="请通过扫一扫或搜索查询商品信息" />
 <block wx:for="{{commodityMessage}}" wx:key="item">
-    <van-card data-commodityId="{{item.commodityId}}" price="{{item.commodityMoney}}" desc="{{item.commodityRemark}}" title="{{item.commodityName}}" thumb="{{item.commodityImg}}">
-    <van-button>修改</van-button>
+    <van-card price="{{item.commodityMoney}}" desc="{{item.commodityRemark}}" title="{{item.commodityName}}" thumb="{{item.commodityImg}}">
+        <view slot="footer">
+            <van-button size="small" bind:click="updateCommodity">修改</van-button>
+            <van-button size="small" data-commodityImg="{{item.commodityImg}}" data-commodityId="{{item.commodityId}}" bind:click="deleteCommodity">删除</van-button>
+        </view>
     </van-card>
 </block>
