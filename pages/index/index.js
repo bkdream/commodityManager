@@ -1,4 +1,5 @@
 const db = wx.cloud.database().collection("shopmessage");
+var commodityId = null;
 Page({
     data:{
 
@@ -7,18 +8,22 @@ Page({
         this.getTabBar().setData({
           active:0,
         })
-      },
+    },
       //主页右上角扫一扫查询功能
       onClickscanIcon(e){
         var _this = this;
         wx.scanCode({
           onlyFromCamera: true,
           success(res){
+            commodityId = res.result;
               db.where({
-                commodityId:res.result,
+                commodityId:commodityId,
               }).get({
                 success(res){
                   if(res.data.length == 0){
+                    _this.setData({
+                      commodityMessage:res.data,
+                    })
                     wx.showToast({
                       title: '无此条商品信息',
                       icon:'none',
@@ -41,23 +46,32 @@ Page({
         })
     },
     deleteCommodity(e){
-      var fileList = [];
-      fileList.push(e.currentTarget.dataset.commodityimg)
+      //删除云储存文件用
+      var deleteList = [];
+      deleteList.push(e.currentTarget.dataset.commodityimg);
+      var that = this;
       db.where({
-        commodityId:e.currentTarget.dataset.commodityid
+        commodityImg:e.currentTarget.dataset.commodityimg
       }).remove({
         success(res){
           wx.showToast({
             title: '删除成功',
             icon:'success',
-            duration:2000,
-          })
+            duration:1000,
+          });
+          console.log(that.data)
         }
       });
       wx.cloud.deleteFile({
-        fileList:fileList,
+        fileList:deleteList
+      })
+      db.where({
+        commodityId:commodityId,
+      }).get({
         success(res){
-          console.log(res)
+          that.setData({
+            commodityMessage:res.data,
+          })
         }
       })
     }

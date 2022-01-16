@@ -7,8 +7,8 @@
 <block wx:for="{{commodityMessage}}" wx:key="item">
     <van-card price="{{item.commodityMoney}}" desc="{{item.commodityRemark}}" title="{{item.commodityName}}" thumb="{{item.commodityImg}}">
         <view slot="footer">
-            <van-button size="small" bind:click="updateCommodity">修改</van-button>
-            <van-button size="small" data-commodityImg="{{item.commodityImg}}" data-commodityId="{{item.commodityId}}" bind:click="deleteCommodity">删除</van-button>
+            <van-button style="margin-right: 10px;" size="small" bind:click="updateCommodity">修改</van-button>
+            <van-button size="small" data-commodityImg="{{item.commodityImg}}" bind:click="deleteCommodity">删除</van-button>
         </view>
     </van-card>
 </block>
